@@ -11,6 +11,13 @@ body {
 .center{
   text-align: center;
 }
+.screen{
+  padding: 5vh 10%;
+}
+
+section{
+  padding :3vh 0;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
