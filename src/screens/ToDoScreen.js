@@ -1,25 +1,18 @@
-import { useState } from "react";
+import { useContext } from "react";
 import Task from "../components/Task";
+import TaskContext from "../context/TaskContext";
 import AddTask from "../components/AddTask";
-
+import { useNavigate } from "react-router-dom";
 const ToDOScreen = () => {
-    const [taskList, setTaskList] = useState([]);
-
-    let addNewTask = (task) => {
-        setTaskList([...taskList, {...task, createdDate: new Date() }]);
-    };
+    const  { taskList } = useContext(TaskContext);
+    const navigate = useNavigate();
    return (
     <>
             <div className="screen">
                 <h1 className="ui heading center">TO-DO LIST</h1>
                 <div>
                     <button onClick={ (e) => {
-                       setTaskList([...taskList,{
-                    title:"Go to the Gym",
-                    description: "Going is good for muscle growth",
-                    createdDate: new Date(),    
-                       },
-                    ]);
+                        navigate("/add-task");
                     }}
                     className="ui secondary button">Add Task</button>
                     <section>

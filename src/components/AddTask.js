@@ -1,6 +1,9 @@
-import { useState } from "react";
-
-const AddTask = ({onSubmit}) => {
+import { useContext, useState } from "react";
+import TaskContext from "../context/TaskContext";
+import { useNavigate } from "react-router-dom";
+const AddTask = () => {
+    const {addNewTask}=useContext(TaskContext);
+    const navigate = useNavigate();
     const [task, setTask] = useState({
         title: "",
         description: "",
@@ -16,8 +19,10 @@ const AddTask = ({onSubmit}) => {
 
     let onFormSubmit = (e) => {
         e.preventDefault();
-        console.log("Task submitted:", task);
-        onSubmit(task);
+        console.log(task);
+        addNewTask(task);
+        setTask({});
+        navigate("/");
     };
 
  return (
