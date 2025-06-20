@@ -30,7 +30,7 @@ const ToDOScreen = () => {
                     </div>
                     </section>
                 </div>
-                <AddTask onSubmit={addNewTask} />
+                {/* <AddTask onSubmit={addNewTask} /> */}
             </div>
             
             </>
