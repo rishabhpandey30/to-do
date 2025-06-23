@@ -3,9 +3,12 @@ import Task from "../components/Task";
 import TaskContext from "../context/TaskContext";
 import AddTask from "../components/AddTask";
 import { useNavigate } from "react-router-dom";
+
+
 const ToDOScreen = () => {
     const  { taskList } = useContext(TaskContext);
     const navigate = useNavigate();
+    
    return (
     <>
             <div className="screen">
@@ -17,8 +20,8 @@ const ToDOScreen = () => {
                     className="ui secondary button">Add Task</button>
                     <section>
                     <div className="ui cards">
-                       {taskList.map((task, index) => (
-                        <Task task={task} key={index} />
+                       {taskList.map((task) => (
+                        <Task task={task} key={task.taskID} />
                 ))} 
                     </div>
                     </section>
